@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cunted</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no, viewport-fit=cover" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="white" />
 	<link rel="manifest" href="static/pwa/site.webmanifest">
 
@@ -16,10 +16,34 @@
 </head>
 <body ontouchstart="">
 	<main>
-		<h1>0</h1>
+		<h1 id="counter">0</h1>
 	</main>
 	<footer>
-		reset
+		<button id="reset" class="reset">reset</button>
 	</footer>
+
+	<script>
+		var count = 0;
+		var counterElement = document.getElementById("counter");
+
+		function refreshCounter() {
+			counterElement.textContent = count;
+		}
+
+		document.body.addEventListener("click", function(e) {
+			count++;
+			refreshCounter();
+		});
+
+		document.getElementById("reset").addEventListener("click", function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+
+			console.log("ASDASD")
+
+			count = 0;
+			refreshCounter();
+		});
+	</script>
 </body>
 </html>
