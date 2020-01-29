@@ -42,4 +42,5 @@ button.reset {
 	border: none;
 	padding: 1em;
 	font-size: 1em;
+	opacity: 0.2;
 }
