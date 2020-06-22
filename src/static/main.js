@@ -1,21 +1,33 @@
-var count = 0;
-var counterElement = document.getElementById("counter");
+const createCounter = () => {
+	let count = 0;
+	let counterElement = document.getElementById("counter");
 
-function refreshCounter() {
-	counterElement.textContent = count;
+	const refreshCounter = () => {
+		counterElement.textContent = count;
+	}
+
+	const withRefresh = (modifier) => {
+		return (...args) => {
+			modifier(...args);
+			refreshCounter();
+		}
+	}
+
+	return {
+		increment: withRefresh(() => {
+			count += 1;
+		}),
+
+		decrement: withRefresh(() => {
+			count -= 1;
+		}),
+
+		reset: withRefresh(() => {
+			count = 0;
+		}),
+	};
 }
 
-document.body.addEventListener("click", function(e) {
-	count++;
-	refreshCounter();
-});
-
-document.getElementById("reset").addEventListener("click", function(e) {
-	e.preventDefault();
-	e.stopPropagation();
-
-	console.log("ASDASD")
-
-	count = 0;
-	refreshCounter();
-});
+const counter = createCounter();
+document.body.addEventListener("click", counter.increment);
+document.getElementById("reset").addEventListener("click", counter.reset);
