@@ -1,5 +1,5 @@
-![cunted-mock](static/cunted-mock.png)
+![cunted-mock](src/static/cunted-mock.png)
 
 <p align="center">
-  Simple minimalistic tap counter
+  Simple minimalistic counter web application
 </p>
