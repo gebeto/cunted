@@ -10,8 +10,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "deploy": "parcel build src/index.html",
+    "build": "parcel build --public-url '.' src/index.html",
+    "deploy": "node deploy.js",
     "build:deploy": "npm run build && npm run deploy"
   },
   "devDependencies": {
