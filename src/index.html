@@ -15,35 +15,16 @@
 	<link rel="stylesheet" href="static/styles.css">
 </head>
 <body ontouchstart="">
+	
 	<main>
 		<h1 id="counter">0</h1>
 	</main>
+
 	<footer>
 		<button id="reset" class="reset">reset</button>
 	</footer>
 
-	<script>
-		var count = 0;
-		var counterElement = document.getElementById("counter");
-
-		function refreshCounter() {
-			counterElement.textContent = count;
-		}
-
-		document.body.addEventListener("click", function(e) {
-			count++;
-			refreshCounter();
-		});
-
-		document.getElementById("reset").addEventListener("click", function(e) {
-			e.preventDefault();
-			e.stopPropagation();
-
-			console.log("ASDASD")
-
-			count = 0;
-			refreshCounter();
-		});
-	</script>
+	<script src="static/main.js"></script>
+	
 </body>
 </html>
