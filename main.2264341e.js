@@ -148,7 +148,11 @@ var createCounter = function createCounter() {
 
 var counter = createCounter();
 document.body.addEventListener("click", counter.increment);
-document.getElementById("reset").addEventListener("click", counter.reset);
+document.getElementById("reset").addEventListener("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  counter.reset();
+});
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -177,7 +181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51364" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57412" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
