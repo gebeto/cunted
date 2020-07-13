@@ -30,4 +30,8 @@ const createCounter = () => {
 
 const counter = createCounter();
 document.body.addEventListener("click", counter.increment);
-document.getElementById("reset").addEventListener("click", counter.reset);
+document.getElementById("reset").addEventListener("click", (e) => {
+	e.preventDefault();
+	e.stopPropagation();
+	counter.reset();
+});
