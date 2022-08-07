@@ -24,8 +24,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -34,6 +32,8 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
