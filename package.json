@@ -1,20 +1,17 @@
 {
-  "dependencies": {
-    "parcel-bundler": "^1.12.4"
-  },
+  "dependencies": {},
   "name": "cunted",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "https://github.com/gebeto/cunted",
   "author": "gebeto <slavik.nychkalo@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build --public-url '.' src/index.html",
-    "deploy": "node deploy.js",
-    "build:deploy": "npm run build && npm run deploy"
+    "build": "parcel build --public-url '.' src/index.html"
   },
   "devDependencies": {
-    "ghpages": "^0.0.10"
+    "@parcel/packager-raw-url": "2.7.0",
+    "@parcel/transformer-webmanifest": "2.7.0",
+    "parcel": "^2.7.0"
   }
 }
