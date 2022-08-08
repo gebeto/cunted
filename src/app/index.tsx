@@ -1,5 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { render } from "preact";
 import { Counter } from "./Counter";
 
-const root = createRoot(document.getElementById("root")!);
-root.render(<Counter />);
+render(<Counter />, document.body);

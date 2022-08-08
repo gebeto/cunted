@@ -35,7 +35,7 @@ h6 {
   margin: 0;
 }
 
-h1.count {
+.count {
   font-size: 16em;
   position: fixed;
   left: 50%;
@@ -43,7 +43,7 @@ h1.count {
   transform: translateX(-50%) translateY(-50%);
 }
 
-button.reset {
+.reset {
   position: fixed;
   bottom: max(1em, env(safe-area-inset-bottom));
   left: 50%;

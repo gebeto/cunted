@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "ES2015"],
-    "jsx": "preserve",
-    "jsxImportSource": "react",
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "jsxImportSource": "preact",
     "target": "es2015",
     "module": "commonjs",
     "esModuleInterop": true,
